@@ -1,0 +1,67 @@
+collection interface (java.util.Collection) và map interface (java.util.Map) là 2 giao diện gốc của collection java
+
+- what is FrameWork 
+    là 1 tập hợp các lớp và giao diện cung cấp kiến trúc được tạo sẵn
+
+- cấc phương thức có trong collection 
+    add(object) : nó sử dụng để thêm 1 collection 
+    addAll(collection c) : phương thức này dùng để thêm tất cả các phần tử trong collection đã cho vào collection này
+    clear(): xóa tất cả các phần tử trong 1 collection
+    contain(object o): phương thức này trả về true nếu collection chứa phần tử chỉ định
+    containAll(collection c) : phương thức này trả về true nếu collection này chứa tất cả các phần tử trong tham số truyền vào
+    hashCode(): method này được sử dụng để trả về giá trị mã băm cho collection chỉ định
+    isEmpty(): trả về true nếu không chứa phần tử nào
+    paralleStream(): method này trả về 1 luồng song song với collection này làm nguồn nó 
+    remove(object o): nó dùng để xóa phần tử chỉ định, nếu có nhiều hơn 1 phần tử chỉ định trong collection thì nó sẽ xóa th đầu tiên
+    removeAll(collection c): phương thức này dùng để xóa 1 tập con(collection con) trong 1 collection ban đầu 
+    toArray() : method này được sử dụng đề trả về 1 mảng trong collection này
+
+- các interface mở rộng của collections interface
+1. iterable interface
+- đây là giao diện gốc cho toàn bộ collection FrameWork, chức năng chính của giao diện này là cung cấp một trình vòng lặp cho collections do đó nó chỉ chứa 
+một phương thức trừu tượng là iterator
+Iterator iterator()
+
+2.collection interface
+3.List interface: 
+- dữ liệu của loại danh sách
+- ta có thể thao tác như : lưu , sắp xếp và thao tác 
+- cho phép trùng lặp 
+- các dữ liệu thuộc List như : vector, ArrayList, LinkedLis,... vì nó là tập con của List nên ta có thể khởi tạo List như sau
+
+- ArrayList: cung cấp cho ta mảng động trong java, mặc dù nó chậm hơn so với mảng tiêu chuẩn nhưng có thể hữu ích trong cấc chương trình cần nhiêu thao tác trong mảng, nó sẽ tự động tăng kích thước
+lên và cũng như giảm đi nếu ta sử thêm hoặc xóa 1 phần tử trong ArrayList, cho phép ta truy cập ngâu nhiên trong ArrayList
+- LinkedList : - đây là cấu trúc dữ liệu tuyến tính 
+                - danh sách liên kết như nào thì thằng này hoạt động như dslk
+- vector: - cung cấp cho ta mảng động trong java 
+          - nó giống ArrayList ở mọi phương diện và khác 1 chút là thằng vector được đồng bộ hóa và thằng ArrayList không được đồng bộ hóa
+- stack : LIFO 
+example : 
+List<T> a = new ArrayList<T>();
+List<T> b = new vector<T>();
+
+- Queue: FIFO
+    - lưu dữ liệu theo thứ tự nhất định như vào thứ 1 thì ở hàng 1 và ra đầu tiên
+    - các lớp thuộc Queue như : PriorityQueue, ArrayDeque
+example
+Queue<T> a = new PriorityQueue<t>();
+Queue<T> b = new ArrayDeque<t>();
+
+- Set: nó là 1 tập hợp với các value là các key tức là không bị trùng lặp trong 1 tập hợp
+    - các lớp thuộc Set như : HashSet, TreeSet, LinkedHashSet
+example:
+Set<T> a = new HashSet<T>();
+Set<T> b = new TreeSet<T>();
+Set<T> c = new LinkedHashSet<T>();
+
+*HashSet : - kế thừa từ cách hoạt động của Hash table nên khi add vào thì nó k vào theo một thứ tự mà dựa trên mã bâm của chúng(hashcode)
+            - có thể chèn phần tử null vào HashSet
+* LinkedHashSet : - nó ngược lại với HashSet là nó chèn vào theo thứ tự
+
+- Sorted set : 
+    - TreeSet: lớp TreeSet sử dụng cây để lưu trữ. thứ tự của nó giống lúc nó đc thêm vào và nó có đặc tính của set key là duy nhất
+
+- Map : 
+    Map<T> a = new HashMap<>(); th này thì dùng theo Map thông thường là Key : value
+    Map<T> b = new TreeMap<>(); th này thì dùng theo cây và cũng key : value
+

@@ -1,0 +1,66 @@
+java Exception
+
+- khi chạy mã java thì có thể xuất hiện các lôi : lỗi mã hóa do lập trình viên thực hiện,
+lỗi do nhập sai hoặc những điều không thể lường trước khác
+- khi lỗi xảy ra thì java sẽ dừng lại và tạo ra 1 thông báo lỗi, thuật ngữ : java sẽ ném 1 ngoại lệ(1 lỗi)
+- try and catch dùng để xử lý những cái này
+
+Try-catch
+    try : cho phép bạn xác định 1 khối mã được kiểm tra lỗi trong khi nó đang thực thi(khi lập trình đồng bộ thì gặp lại lệnh nào có lỗi thì nó dừng chương trình chạy
+    và báo lỗi luôn nên khi dùng try thì nó vẫn chạy tiếp và bỏ qua lỗi phần bỏ qua đấy sẽ được chuyển xuống catch)
+    catch : cho phép bạn xác định 1 khối mã sẽ được thực thi, nếu có lỗi xảy ra trong khối catch
+try{
+    ...
+}catch(Exception e) {
+    ...
+    // e cho ta biết lỗi mà ta đang gặp phải
+}
+ finally{
+    ....
+}// nó có thể sử dụng hoặc không sử dụng, nó được gọi sau khi chạy try-catch
+
+
+Example : 
+    public class Main {
+  public static void main(String[ ] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+  }
+}
+// output : Something went wrong
+
+nếu câu lệnh trên không sử dụng try-catch thì nó sẽ báo lỗi như sau 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException(1 Exception sử dụng cùng với throw): 10
+    at Main.main(Main.java:4)
+
+
+Throw:
+ - câu lệnh throw cho phép bạn tạo ra 1 lỗi tùy chỉnh
+ - được sử dụng cùng với kiểu ngoại lệ. có nhiều kiểu ngoại lệ(Exception) có sẵn trong java như : 
+ ArithmeticException, FileNotFoundException, ArrayIndexOutOfBoundsException, securityException,...
+
+Example : 
+    public class Main {
+  static void checkAge(int age) {
+    if (age < 18) {
+      throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+    }
+    else {
+      System.out.println("Access granted - You are old enough!");
+    }
+  }
+
+  public static void main(String[] args) {
+    checkAge(15); // Set age to 15 (which is below 18...)// output : Exception in thread "main" java.lang.ArithmeticException(throw Exception): Access denied - You must be at least 18 years old.
+        at Main.checkAge(Main.java:4)
+        at Main.main(Main.java:12)
+    checkAge(20); // output: Access granted - You are old enough!
+  }
+}
+
+
+

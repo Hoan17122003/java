@@ -1,0 +1,42 @@
+** lưu ý khi dùng cusor trong java
+- con trỏ luôn trỏ tới trước phần tử đầu tiên 
+- các lớp Iterator,ListIterator chúng đều là lớp Interfaces(lớp trừu tượng), chúng ta sử dụng các phương thức như element(), iterator(), listIterator(), để tạo các đối tượng 
+lớp này 
+- biểu tượng $ trong lớp tên tham chiếu là bằng chứng cho thấy khái niệm các lớp  bên trong được sử dụng
+và các đối tượng lớp này được tạo ra
+Example : 
+    // Java program to demonstrate iterators references
+ 
+// Importing required classes from java.util package
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Vector;
+ 
+// Main class
+public class GFG {
+   
+    // Main driver method
+    public static void main(String[] args)
+    {
+        // Creating an object of Vector class
+        Vector v = new Vector();
+ 
+        // Creating three iterators
+        Enumeration e = v.elements();
+        Iterator itr = v.iterator();
+        ListIterator ltr = v.listIterator();
+ 
+        // Print class names of iterators
+        // using getClass() and getName() methods
+        System.out.println(e.getClass().getName());
+        System.out.println(itr.getClass().getName());
+        System.out.println(ltr.getClass().getName());
+    }
+  }
+
+output :
+  java.util.vector$1
+  java.utilVecctor$Itr
+  java.util.Vector$ListItr
+  

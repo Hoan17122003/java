@@ -1,0 +1,84 @@
+java : 
+I. Modifier
+ - Access modifiers
+ - Non-Access modifiers
+
+1. Non-access modifiers
+ +final : không ghi đè lại được phương thức đó nếu khi sử dụng trong class thì phương thức kế thừa không được kế thừa nó ( compiler error)  từ nó sẽ không được ghi đè lại phương thức của class có chwass final
+ + abstract : trừu tượng 1 cái vấn đề, khi dùng trong 1 method hay class thì method hay class đó sẽ đc hiểu là trừu tượng( quan tâm đến mục đích)
+ + transient : các thuộc tính vầ phương thức bị bỏ qua tuần tự hóa đối tượng chứa chúng
+ + synchronized(sync) : đồng bộ : 1 lần chỉ có thể truy cập phương thức bởi 1 luồng
+ + volatile : giá  trị của thuộc tính không phải là chuỗi và được lưu trữ trong bộ nhớ cache cục bộ và luôn được đọc từ bộ nhớ chính
+
+sử khác nhau của static trong class chứa hàm main
+
+trong hàm main nó được khai báo như sau public static void main(String []args) {
+	... code
+}
+
+class Main {
+	static void mymethod() {
+		...} // vì nó là hàm static nên có thể gọi trực tiếp bên trong hàm main mà không cần khởi tạo đối tượng 
+	public void mymethod1() {
+		...} // nó sẽ được gọi khi thông qua khởi tạo đối tượng class Main rồi đối tượng này sẽ gọi đến method mymethod1() đc vì mặc định trong main có từ khóa là hàm static 
+	nên không thể gọi các phương thức hay thuộc tính không được khai báo với static mà phải gọi thông qua đối tượng đc khởi tạo đấy
+// main
+	public static void main(String [] args) {
+	
+II.java package / API 
+ - java APT :  environment của java cung cấp
+ - java package(user define) : do người dùng tạo ra 
+package là gì ? 
+ - có thể hiểu nó như là 1 floder chứa fileclass(dữ liệu class của file nào đấy và tương tác) bên trong và các fileclass(nó được hình thành do file java mà fileclass chứa các đối tượng class)
+ bên trong muốn tương tác với nhau thì phải khai báo floder nơi mà nó đang chứa trong 
+_root
+ |_ mypack
+      |_ MyPackageClass.java
+
+ta sử dụng các lệnh ở terminal như java sau : 
+	trong 1 file java để khởi tạo 1 package ta khởi tạo package như sau 
+	khai báo package name_package
+	chạy lệnh trên terminal như javac -d . filejavachứapackagekhởitạo
+	trong package thì nó lưu file bên trong  đuôi là .class
+	chuyển class trong 1 file java thành file class ta dùng lệnh javac filettamuốnchuyển
+	chạy 1 tệp trong package thì java package.filejavahạy
+
+III.Emnus(class special(const)) : là 1 lớp đặc biệt đại diện cho 1 nhóm các hằng số ( biến không thể thay đổi giống như final z)
+create : với keyword "enums" sử dụng thay vì ( class hay interface), các hằng số được phân cách nhau bằng dấu ',' và tất các phải được viết hoa và enums thì không khởi tạo đối tượng được
+vì nó là hằng số Ví dụ : 
+enums level {
+	LOW,
+	MEDIUM,
+	HIGH
+}
+// MAIN
+	level myVar = level.MEDIUM //"myVar = "MEDIUM";
+* sử dụng enums khi nào : 
+	-> khi biết các giá trị là không thay đổi đc 
+
+toán tử instanceof dùng để kiểm tra 1 đối tượng nào đấy có phải kiểu dữ liệu đấy không nếu có trả true 
+
+IV. java Date(đối tượng date và time) 
+	sử dụng với khai báo package API import java.time	
+	- localDate : trả về cho ngày tháng năm 
+	- localTime: trả về giờ, phút, giây , nano giây
+	- localDateTime: trả về gồm cả 2 th trên localDate , localTime
+	- DateTimeFormatter : để hiện thị và phân tích cú pháp các đối tượng ngày- giờ (Date-time)
+example : 
+	import java.time.localDate
+// main
+	localDate myobj = localDate.now();
+	sout(myobj) // 2022-09-13
+với localDateTime;
+	localDateTime myVar = localDateTime.now(); // 2022-09-13T20:51:...
+	chữ 'T' dùng để phân cách ngày và giờ 
+với format.DateTimeFormatter;
+	nó cung cấp 1 phương thức để định dạng lại giữa localDateTime
+	- method ofPattern(bạn có thể định dạng theo mong muốn ) // đối tượng hiện tại thuộc kiểu dữ liệu là DateTimeFormatter nhưng khi hiện thị ra 
+ta phải convert nó sang string rồi mới hiện thị
+	format(biến kiểu dữ liệu là DateTimeFormatter)
+
+
+
+
+

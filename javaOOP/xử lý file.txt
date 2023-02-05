@@ -1,0 +1,28 @@
+Xử Lý File :
+ - 1 số thao tác xử lý cơ bản : 
+    + creating
+    + reading
+    + updating
+    + deleting
+
+- nó có trong package java.io 
+
+- 1 số phương thức thao tác :
+    + canRead() : boolean :  kiểm tra xem tệp có thể đọc được hay không 
+    + canWrite() : boolean : kiểm tra 1 tệp có thể ghi được hay không  
+    + createNewFile() : boolean : tạo 1 tệp trống
+    + delete() : boolean : xóa 1 File
+    + exists() : boolean : kiểm tra 1 File có tồn tại hay không
+    + getName() : String : trả về tên của 1 File
+    + getAbsolutePath() : String : trả về 1 đường dẫn tuyệt đối của tệp
+    + length() : long: trả về kích thước của 1 File
+    + list() : String[] : trả về 1 mảng các thư mục
+    + mkdir : boolean : tạo 1 thư mục 
+
+
+* lưu ý : 
+- Writing:
+    + khi ghi vào file thì các dữ liệu trong file sẽ bị ghi đè bởi dữ liệu mới nhập vào 
+- reading
+    + 1 số class có sẳn trong API java cung cấp 1 số phương thức đọc và ghi tệp : FIleReader, BufferedReader, Files, Scanner,
+    FileInputStream, FileWriter, BufferedWriter, FileOutputStream,...

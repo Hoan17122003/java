@@ -1,0 +1,37 @@
+V. Iterator(có trong package API, java.util.*) -> nó như là 1 con trỏ trong java
+ - là 1 colecction framwork
+ - con trỏ trong java( có thể coi là như vậy vì java thông thường sẽ không có con trỏ )
+ - nó có những method như sau
+	+ hastNext(): trả về true hoặc false nếu phần tử tiếp theo trong list có tồn tại hay không tồn tại
+	+ next() : trả về phần tử tiếp theo trong list
+	+ previous() : trả về phần tử trước đó trong list 
+	+ hastPrevious(): trả về true hoặc false nếu phần tử trước đó trong list tồn tại hay không tồn tại
+ 
+5.1 1 số con trỏ giống Iterator(java cursors)
+ + Iterator(1.0)
+ + Enumeration(1.2)
+ + Listiterator(1.2)
+5.2 cách thức hoạt động của con trỏ trong java 
+ - ban đầu khi khởi tạo đối tượng iterator thì nó đang trỏ tới trước phần tử đầu tiên
+khi dùng next() và hastNext() để kiểm tra đối tượng trước có tồn tại hay không và truy cập thì nó trỏ vào phần tử đầu tiên
+cứ thực hiện lặp lại đến khi nó trỏ vào phần tử cuối rồi check hasNext() nếu không tồn tại thì nó trỏ ra sau phần tử cuối
+* khi sử dụng remove() thì nó có xử lý 2 ngoại lệ như sau
+ - UnsupportedOperationException: 
+ - illegalstateexception
+
+ ListIterator
+ - nó áp dụng cho các lớp được triển khai tập hợp danh sách như ArrayList,LinkedList,...
+ - hoạt động 2 chiều 
+ - có nhiều phương thức hơn Iterator
+ - khởi tạo giống như Iterator 
+	Example :
+		ListIterator ltr = l.listIterator();
+		- l ở đây là bất kì đối tượng danh sách nào như ArrayList,LinkedList,...
+ - 1 số phương thức:
+	+ 1 số phương thức như Iterator
+	+ nextIndex(): trả về chỉ số phần tử tiếp theo hoặc kích thước danh sách nếu nó trỏ tới cuối danh sách rồi
+	+ previousIndex(): nó trả về chỉ số phần tử trước đó hoặc nó trả về -1 nếu nó trỏ vào đầu danh sách 
+	+ set(tham số truyền vào ) : thay thế phần tử cuối cùng được trả về bởi 
+
+
+	

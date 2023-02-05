@@ -1,0 +1,9 @@
+- instanceof : dùng để kiểm tra đối tượng nào đấy có thuộc lớp đấy hay không
+example:
+
+class Obj {
+// main:
+    Obj o = new Obj();
+    sout(o instanceof Obj); // nó sẽ return về true nếu đối tượng đó thuộc lớp trên và trả về false nếu ngược lại
+    
+}

@@ -1,0 +1,2 @@
+trong java 
+- khi các số cộng với chuỗi thì nó sẽ tự convert sang chuỗi để nối với nhau 

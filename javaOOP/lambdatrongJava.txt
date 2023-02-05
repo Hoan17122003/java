@@ -1,0 +1,22 @@
+lambda expression nó nằm trong package java.util;
+- dùng để thao tác 1 vài cơ bản như : thác tác và truyền dữ liệu cho 1 method(tính năng) nằm trong 1 class trừu tượng 
+thông thường các hàm trừu tượng thì không thể khởi tạo được đối tượng nhưng nếu dùng cách như :
+
+abstract class var = new abstract class() {
+    - ghi đè lại và sử dụng hàm đấy 
+    - ghi đè được nhiều hàm
+}
+    var.hàmdãđượcghiđèbêntrên() // output
+lambda thì sử dụng chức năng giống trên nhưng được gọn lại như sau
+    abstract class var = (parameter,parameter2,....) -> {
+        // code...
+        * thông thường chỉ ghi đè được duy nhất trong 1 lớp trừu tượng và hàm trừu tượng khi sử dụng lambda thì chỉ có 1 method
+        - xử lý logic và trả về tùy thuộc bạn khởi tạo method(tính năng) trên lớp trừu tượng như thế nào
+        
+    }
+
+- có đối tượng consumer được sử dụng lambda function mà không cần phải khởi tạo 1 lớp Interfaces
+nào đấy, nó sẵn trong package API trong java.uti.function.consumer
+- consumer là 1 function Interfaces nó chỉ nhất 1 parameter và không return giá trị nào
+- mục đích của consumer là thực hiện một thao tác trên đối số đã cho (là thực hiện trong phương thức trên đôi số đã cho)
+- accept

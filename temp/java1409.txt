@@ -1,0 +1,62 @@
+ I. java ArrayList( mảng động)
+ - nó nằm trong package java.util;
+ - cách thức hoạt động của ArrayList:
+	+ bên trong ArrayList có 1 mảng thông thường bên trong nó, khi 1 phần tử được thêm vào , nó sẽ được đặt vào mảng, nếu mảng không đủ lớn
+	thì một mảng lớn hơn được tạo ra để thay thế mảng cũ và mảng cũ bị xóa ( last array( size không đủ để thêm vào ) -> new array( copy mảng củ
+rồi thêm phần tử mới vào cuối mảng))
+ - nó khác mảng bình thường là có thể thay đổi kích thước
+ - 1 số phương thức thao tác trong ArrayList:
+	+ add() : để thêm 1 phần tử vào cuối ArrayList
+	+ get(i) : truy cập phần tử trong ArrayList
+	+ set(i,content) : thay đổi phần tử dựa vào chỉ số , content là nội dung muốn thay đổi
+	+ remove(i) : xóa phần tử tại vị trí thứ i 
+	+ clear() : xóa toàn bộ phần tử trong ArrayList
+	+ size() : trả về kích thước trong ArrayList
+	+ sort() : sắp xếp lại phần tử trong ArrayList( nếu là string thì sắp xếp theo a->z và số thì từ bé đến lớn)
+II. LinkedList(hoạt động như các node) : 
+  - cách thức hoạt động của LinkedList
+	+ nó lưu trữ các mục của nó trong "containers" , danh sách liên kết đến vùng chứa đầu tiên và mõi vùng chứa liên kết đến vùng chứa tiếp theo 
+trong danh sách ( có thể hiểu như dslk trong c++) , có thể hiểu như nó hoạt động như 1 dslk đơn vị trí node đầu tiên sẽ liên kết với node tiếp theo
+để thêm 1 phần tử ( 1 node) vào ds thì nó phải liên kết với những node khác trong ds ( cấp phát động)
+  - nó có tất cả những method mà ArrayList có và linh hoạt ở chỗ là có thể thêm vào đầu hay cuối được 
+	+ addFirst() : 
+	+ addLast() và add(2 th này giống nhau) :
+	+ removeFirst():
+	+ removeLast() :
+	+ getFirst() : 
+	+ getLast() :
+
+ - when to use : sử dụng khi ArrayList dùng để lưu trữ và LinkedList dùng để thao tác dữ liệu
+
+III. javaHashMap( lưu trữ theo khóa - giá trị(map bên c++)) 
+	 - nó dùng khóa - value : truy xuất ra value thì ta thông qua khóa như object có datatype như trên get("khóa") -> value của khóa đó and 
+	muốn lấy ra giá trị khóa thì ta sử dụng get
+	 - nó có phân biệt giữa các khóa bên trong như set 
+	 - 1 số phương thức trong HashMap:
+		+ put(khóa,value) : nó được thêm vào đầu danh sách
+		+ get(khóa) -> value 
+		+ remove(khóa) -> remove(value) delete khóa
+		+ clear() : xóa toàn bộ khóa bên trong HashMap
+		+ size() : trả về kích thước bên trong HashMap
+khi sout HashMap ra thì hiện thị như : khóa = value, ... và ngoặc '{ }'
+nên lặp với forEach khi dùng HashMap
+example:
+	for(data type trả về với khóa hay là value : object của HashMap : cung cấp 2 giá trị trả về như : keySet(trả về khóa), values(trả về giá trị 2 hàm trên không có tham số )
+	khi dùng keySet() khi get(i) thì nó trả về value và ngược lại
+
+IV . HashSet( như set bên c++ nó có các khóa để phân biệt value)
+	- nó phân biệt các value bằng khóa 
+	- 1 số phương thức trong HashSet
+		+ add("value") : thêm vào cuối
+		+ contains(" tham số truyền vào") : kiểm trả tham số đấy có tồn tại hay không trả true or false
+		+ remove( value muốn xóa) : xóa 1 phần tử trong set
+		+ clear() : xóa tất cả phần tử trong set
+		+ size() : trả về kích thước trong set
+- dùng vòng lặp trong HastSet nên dùng forEach nếu chỉ muốn in ra mà thôi sử dụng for khi thao tác dữ liệu
+
+V . java Iterator
+
+
+
+
+	
